@@ -340,7 +340,7 @@ function shrinkNo(btn){
 }
 
 /* Q4 TIMER */
-let t=8;
+let t=6;
 setInterval(()=>{
   if(q4.style.display!=="flex")return;
   timer.innerText=--t;
@@ -353,14 +353,19 @@ const texts=["You & me 💖","To more pictures","Endless Kisses","Lots of trips"
 let i=0;
 function startPhotos(){
   i=0;
-  const interval=setInterval(()=>{
+//  const interval=setInterval(()=>{
     photo.src=imgs[i];
     photoText.innerText=texts[i];
     i++;
-    if(i===imgs.length){
+  const interval=setInterval(()=>{
+    if(i >= imgs.length){
       clearInterval(interval);
       setTimeout(()=>go("finalCode"),1500);
+      return
     }
+    photo.src = imgs[i];
+    photoText.innerText = texts[i];
+    i++;
   },3000);
 }
 
@@ -409,6 +414,7 @@ function startHearts(){
 
 </body>
 </html>
+
 
 
 
