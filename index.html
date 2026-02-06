@@ -371,7 +371,7 @@ function startPhotos(){
 
 /* FINAL CODE */
 function checkFinal(){
-  if(finalInput.value==="090919"){
+  if(finalInput.value.toLowerCase()==="octu"){
     loveModal.style.display="flex";
     confetti(3000);
   }else finalInput.classList.add("shake"),setTimeout(()=>finalInput.classList.remove("shake"),400);
@@ -414,6 +414,7 @@ function startHearts(){
 
 </body>
 </html>
+
 
 
 
